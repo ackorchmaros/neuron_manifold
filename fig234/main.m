@@ -17,10 +17,7 @@ addpath(genpath(sprintf('%s/matlab_functions', mainpath)));
 % real data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%load('2repeat_clean_signal_M170714_MP032_2017-08-07.mat'); % x
-
-%sprintf('%s/data/original/2repeat_clean_signal_M170714_MP032_2017-08-07.mat', mainpath); 
-load(fullfile(sprintf('%s/2repeat_clean_signal_M170714_MP032_2017-08-07.mat',dataroot)));% respAll
+load(fullfile(sprintf('%s/2repeat_clean_signal_M170714_MP032_2017-08-07.mat',dataroot)));% x
 
 % import the mouse data (here use clean file)
 X1 = x(1:2800,:);
