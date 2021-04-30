@@ -1,4 +1,4 @@
-#----------------------- SAVE
+#----------------------- CONVERT FORMAT
 ## author: Annachiara Korchmaros
 ## comments: 
 # (1) load responses of 1 mouse from MICE DATASET
