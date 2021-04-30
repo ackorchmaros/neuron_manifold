@@ -1,6 +1,9 @@
 ################################ FIGURES 2-4 ################################
 # author:Annachiara Korchmaros
 
+# Create figs directory
+mkdir ~/Desktop/neuron_manifold/fig234/figs
+
 # Load mice dataset (2 repeats 1 mouse) from figshare
 
 /Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/fig234/load_main_example.m');exit;" | tail -n +11
@@ -11,4 +14,4 @@ Rscript --vanilla ~/Desktop/neuron_manifold/fig234/convert_signal_matlab.R 'M170
 
 # Make simulated data and plots
 
-/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/dimensionality/scripts/repository/fig234/main.m');exit;" | tail -n +11
+/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/fig234/main.m');exit;" | tail -n +11
