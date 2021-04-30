@@ -30,7 +30,7 @@ for k = 1:length(iexp) %k=4 our main example
     respAll{k}  = single(respB);
     istimAll{k} = single(wstim);
 end
-save(fullfile(matroot, sprintf('%s_proc.mat', stimset{K})),'respAll','istimAll');
+save(fullfile(dataroot, sprintf('%s_proc.mat', stimset{K})),'respAll','istimAll');
 
 
 
