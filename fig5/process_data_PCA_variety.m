@@ -6,9 +6,10 @@ mainpath = '~/Desktop/neuron_manifold';
 dataroot = sprintf('%s/data', mainpath); 
 % where temporary data is stored 
 matroot = sprintf('%s/fig5/temp', mainpath); 
+mkdir(matroot);
 % where plots are saved
-myplotroot='fig5/figs';
-
+myplotroot= sprintf('%s/fig5/figs', mainpath); 
+mkdir(myplotroot);
 %% FIGURE 5
 % author: Annachiara Korchamros
 
@@ -67,3 +68,5 @@ compute_PCA_eigs(dataroot, matroot,sample_case,uniform_cluster2);
 % plot
 plots(dataroot,myplotroot,sample_case,normal,uniform_cluster1,uniform_cluster2,dimension,sample_size);
 close;
+
+disp('Done');
