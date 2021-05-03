@@ -5,7 +5,7 @@ mainpath = '~/Desktop/neuron_manifold';
 
 % where plots(outputs) are saved
 myplotroot=sprintf('%s/fig7_S4/figs', mainpath);
-
+mkdir(myplotroot);
 %% FIGURE 7 and S4
 % author: Kaie Kubjas, Annachiara Korchamros
 
