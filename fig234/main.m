@@ -1,7 +1,7 @@
 clear all;
 
 % !!!!!! update mainpath 
-mainpath = '/Users/korchma1/Desktop/neuron_manifold';
+mainpath = '~/Desktop/neuron_manifold';
 % where data is stored 
 dataroot = sprintf('%s/data', mainpath); 
 % where plots(outputs) are saved
