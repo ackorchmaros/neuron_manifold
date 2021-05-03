@@ -1,6 +1,6 @@
-################################ Test how the eigenvalues change accordingly to sample size and sampling method ################################
+################################ FIG 5 ################################
 # author:Annachiara Korchmaros
-
+# goal: Test how the eigenvalues change accordingly to sample size and sampling method
 # Create figs directory
 mkdir ~/Desktop/neuron_manifold/fig5/figs
 
