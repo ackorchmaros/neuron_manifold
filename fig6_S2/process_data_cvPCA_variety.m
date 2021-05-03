@@ -6,9 +6,10 @@ mainpath = '~/Desktop/neuron_manifold';
 dataroot = sprintf('%s/data', mainpath); 
 % where temporary data is stored 
 matroot = sprintf('%s/fig6_S2/temp', mainpath); 
+mkdir(matroot);
 % where plots are saved
 myplotroot= sprintf('%s/fig6_S2/figs', mainpath); 
-
+mkdir(myplotroot);
 %% FIGURE 6
 % author: Annachiara Korchamros
 % sourse: compileResps.m from https://github.com/stringer-pachitariu-et-al-2018b
