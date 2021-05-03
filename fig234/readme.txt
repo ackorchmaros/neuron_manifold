@@ -1,9 +1,6 @@
 ################################ FIGURES 2-4 ################################
 # author:Annachiara Korchmaros
 
-# Create figs directory
-mkdir ~/Desktop/neuron_manifold/fig234/figs
-
 # Load mice dataset (2 repeats 1 mouse) from figshare
 
 /Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/fig234/load_main_example.m');exit;" | tail -n +11
