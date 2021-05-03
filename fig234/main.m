@@ -6,6 +6,7 @@ mainpath = '~/Desktop/neuron_manifold';
 dataroot = sprintf('%s/data', mainpath); 
 % where plots(outputs) are saved
 myplotroot=sprintf('%s/fig234/figs', mainpath);
+mkdir(myplotroot);
 % where other functions are saved
 addpath(genpath(sprintf('%s/matlab_functions', mainpath)));
 
