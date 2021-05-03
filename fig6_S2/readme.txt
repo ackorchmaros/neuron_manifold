@@ -2,14 +2,6 @@
 # author:Annachiara Korchmaros
 # comments: Eigenspectrum decay for Segres
 
-
-# Create figs directory
-mkdir ~/Desktop/neuron_manifold/fig6_S2/figs
-
-# Create temp directory
-mkdir ~/Desktop/neuron_manifold/fig6_S2/temp
-
-
 ########## FIG 6
 
 # sample 3000,300,30 points from a segre variety of dimension 199 in a space of 1000
