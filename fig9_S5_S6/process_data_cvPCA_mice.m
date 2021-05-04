@@ -10,7 +10,8 @@ mkdir(matroot);
 % where plots are saved
 myplotroot= sprintf('%s/fig9_S5_S6/figs', mainpath); 
 mkdir(myplotroot);
-
+% where other functions are saved
+addpath(genpath(sprintf('%s/matlab_functions', mainpath)));
 %% FIGURES 9a, S5a-f, S6a
 % author: Annachiara Korchamros
 % sourse: compileResps.m from https://github.com/stringer-pachitariu-et-al-2018b
