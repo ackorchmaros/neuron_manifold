@@ -8,7 +8,7 @@ A=cat(3,repeat1,repeat2);
 
 % cross-validated cvPCA computation
 nshuff = 10;
-ss0 = shuffledSpectrum_ak(A, nshuff);
+ss0 = cvPCA(A, nshuff);
 ss  = nanmean(ss0,2); 
 ss  = ss(:) / sum(ss);
 
