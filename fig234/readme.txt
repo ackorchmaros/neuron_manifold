@@ -3,7 +3,7 @@
 
 # Load mice dataset (2 repeats 1 mouse) from figshare
 
-/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/fig234/load_main_example.m');exit;" | tail -n +11
+/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/R_functions/load_main_example.m');exit;" | tail -n +11
 
 # Convert to format: 2(numb. stimuli) x numb. neurons
 
