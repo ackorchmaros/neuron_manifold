@@ -103,7 +103,7 @@ subsample.og<-sample.og[index.subsample,]
 f.subsample.og<-paste0(out.dir,"/",ambient.dimension,'ambient_',subsample.size,"sample_",og.dimension,"og.mat")
 writeMat(con=f.subsample.og,x=subsample.og)
 
-#(8) subsample 30
+#(6) subsample 30
 subsample.size<-30
 set.seed(170715) # mouse tag +1
 index.subsample<-sample.int(sample.size, subsample.size)
