@@ -4,7 +4,7 @@
 #(1) load data matrices with 3000,300, or 30 samples 
 #(2) add noise from multivariate normal with different seed for each image 
 #(3) centralize repeats
-#(4) check correlation between repeats is 0.21 (tune mean and stsd checking this!)
+#(4) check correlation between repeats is 0.21 (you can tune mean and std by checking this!)
 #(5) print correlation
 #(6) save repeats
 ##############
