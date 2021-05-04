@@ -5,7 +5,7 @@
 
 # Load mice dataset (2 repeats 1 mouse) 
 
-/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/fig11_S8/load_main_example_full_1step_preprocess.m');exit;" | tail -n +11
+/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/matlab_functions/load_main_example_full_1step_preprocess.m');exit;" | tail -n +11
 
 ##### Fig 11a,g
 # distribution of average 
