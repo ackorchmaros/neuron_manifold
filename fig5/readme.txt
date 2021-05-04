@@ -33,4 +33,4 @@ Rscript --vanilla ~/Desktop/neuron_manifold/fig5/sample_segre_10k_uniform_2clust
 Rscript --vanilla ~/Desktop/neuron_manifold/fig5/sample_segre_10k_uniform_2clusters.R 100 5000 10 60 160 210 0.3 '~/Desktop/neuron_manifold/data'  
 
 # make plots
-/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/fig5/process_data_PCA_variety.m');exit;" | tail -n +11
+/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/fig5/process_data_PCA_segre.m');exit;" | tail -n +11
