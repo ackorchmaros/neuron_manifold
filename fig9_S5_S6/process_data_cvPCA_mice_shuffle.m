@@ -40,7 +40,7 @@ mouse=1;
 cvPCA_eigs_mice_shuffle(dataroot, matroot,mouse_tag,mouse);
 
 % plot
-plot_mice_powerlaw_shuffle_figS5g(matroot, myplotroot,mouse_tag)
+plot_mice_powerlaw_shuffle_figS5g(matroot, myplotroot,mouse_tag);
 
 %%%%%%%%%%
 % fig S5h
@@ -52,7 +52,7 @@ mouse=2;
 cvPCA_eigs_mice_shuffle(dataroot, matroot,mouse_tag,mouse);
 
 % plot
-plot_mice_powerlaw_shuffle_figS5h(matroot, myplotroot,mouse_tag)
+plot_mice_powerlaw_shuffle_figS5h(matroot, myplotroot,mouse_tag);
 
 %%%%%%%%%%
 % fig S5i
@@ -64,7 +64,7 @@ mouse=3;
 cvPCA_eigs_mice_shuffle(dataroot, matroot,mouse_tag,mouse);
 
 % plot
-plot_mice_powerlaw_shuffle_figS5i(matroot, myplotroot,mouse_tag)
+plot_mice_powerlaw_shuffle_figS5i(matroot, myplotroot,mouse_tag);
 
 %%%%%%%%%%
 % fig S5j
@@ -76,7 +76,7 @@ mouse=5;
 cvPCA_eigs_mice_shuffle(dataroot, matroot,mouse_tag,mouse);
 
 % plot
-plot_mice_powerlaw_shuffle_figS5j(matroot, myplotroot,mouse_tag)
+plot_mice_powerlaw_shuffle_figS5j(matroot, myplotroot,mouse_tag);
 
 %%%%%%%%%%
 % fig S5k
@@ -88,7 +88,7 @@ mouse=6;
 cvPCA_eigs_mice_shuffle(dataroot, matroot,mouse_tag,mouse);
 
 % plot
-plot_mice_powerlaw_shuffle_figS5k(matroot, myplotroot,mouse_tag)
+plot_mice_powerlaw_shuffle_figS5k(matroot, myplotroot,mouse_tag);
 
 %%%%%%%%%%
 % fig S5l
@@ -100,21 +100,20 @@ mouse=7;
 cvPCA_eigs_mice_shuffle(dataroot, matroot,mouse_tag,mouse);
 
 % plot
-plot_mice_powerlaw_shuffle_figS5l(matroot, myplotroot,mouse_tag)
+plot_mice_powerlaw_shuffle_figS5l(matroot, myplotroot,mouse_tag);
 
+%%%%%%%%%%
+% fig S6b
+%%%%%%%%%%
+mouse_tag='M170714_MP032_2017-08-07';
+mouse=4; 
 
-%(2) analysis
-% select mouse 
-% compute cross-validated PCs and signal variance and SNR and responsiveness
-% permute neuronal response 20 times 
-%statsShuffledPCA_permute_col_same_repeat_ak(dataroot, matroot,mouse_tag,mouse); %same permutation across repeats
-statsShuffledPCA_permute_col_ak(dataroot, matroot,mouse_tag,mouse); %different permutation across repeats
-statsShuffledPCA_permute_col_redCells_ak(dataroot, matroot,mouse_tag,mouse); %different permutation across repeats only for data after 1st step of preproccesing
+% run cvPCA with shuffling
+cvPCA_eigs_mice_shuffle_redCells(dataroot, matroot,mouse_tag,mouse);
 
-%(3) plots
-% plot the first 5 permutations and the average decay across permutations
-ordered_fig2_permute_col_ak(matroot, myplotroot,mouse_tag); % decreasing variances order
-%fig2_permute_col_ak(matroot, myplotroot,mouse_tag); % cvPCA variances order
-ordered_fig2_permute_col_redCells_ak(matroot, myplotroot,mouse_tag);
+% plot
+plot_mice_powerlaw_shuffle_figS6b(matroot, myplotroot,mouse_tag);
+
+disp('Done');
 
 
