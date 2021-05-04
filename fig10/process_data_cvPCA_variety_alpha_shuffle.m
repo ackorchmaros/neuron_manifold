@@ -21,7 +21,7 @@ segre_case='10000ambient_3000segre_199segre';
 compute_cvPCA_eigs_shuffle(dataroot, matroot,segre_case);
 
 % plot
-plot_powerlaw_alpha(matroot,myplotroot,segre_case);
+plot_powerlaw_alpha_shuffle(matroot,myplotroot,segre_case);
 close;
 
 disp('Done');
