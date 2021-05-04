@@ -4,7 +4,7 @@
 
 ########## FIG 6
 
-# sample 3000,300,30 points from a segre variety of dimension 199 in a space of 1000
+# sample 3000,300,30 points from a segre variety of dimension 199 in a space of 10000
 Rscript --vanilla ~/Desktop/neuron_manifold/fig6_S2/sample_segre_cases_proj.R 10000 3000 '~/Desktop/neuron_manifold/data' 10 
 
 # add noise to the sample to create 2 repeats
@@ -16,7 +16,7 @@ Rscript --vanilla ~/Desktop/neuron_manifold/fig6_S2/add_noise2segre.R 10000 3000
 
 # make plots
 # !!!! don't run FIGURE S2
-/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/fig6_S2/process_data_cvPCA_variety.m');exit;" | tail -n +11
+/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/fig6_S2/process_data_cvPCA_segre.m');exit;" | tail -n +11
 
 
 ######## FIG S2
@@ -69,6 +69,6 @@ Rscript --vanilla ~/Desktop/neuron_manifold/fig6_S2/add_noise2segre.R 40 3000 '~
 
 # make plots
 # !!!! don't run FIGURE 6
-/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/fig6_S2/process_data_cvPCA_variety.m');exit;" | tail -n +11
+/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/fig6_S2/process_data_cvPCA_segre.m');exit;" | tail -n +11
 
 
