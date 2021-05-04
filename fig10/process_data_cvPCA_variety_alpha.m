@@ -14,7 +14,6 @@ mkdir(myplotroot);
 addpath(genpath(sprintf('%s/matlab_functions', mainpath)));
 %% FIGURE 10a
 % author: Annachiara Korchamros
-% sourse: compileResps.m from https://github.com/stringer-pachitariu-et-al-2018b
 
 %inputs
 sample_case='10000ambient_3000sample_199segre';
