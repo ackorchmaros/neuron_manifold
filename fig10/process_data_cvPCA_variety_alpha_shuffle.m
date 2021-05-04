@@ -15,7 +15,7 @@ addpath(genpath(sprintf('%s/matlab_functions', mainpath)));
 %% FIGURE 10b
 % author: Annachiara Korchamros
 %inputs
-sample_case='10000ambient_3000sample_199segre';
+segre_case='10000ambient_3000segre_199segre';
 
 % compute cvPCA variances 
 compute_cvPCA_eigs_shuffle(dataroot, matroot,segre_case);
