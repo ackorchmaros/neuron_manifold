@@ -11,5 +11,5 @@
 
 # Run full and first step preprocess for all mice
 
-/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold/preprocessing/main.m');exit;" | tail -n +11
+/Applications/MATLAB_R2019b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('~/Desktop/neuron_manifold-main/preprocessing/main.m');exit;" | tail -n +11
 
