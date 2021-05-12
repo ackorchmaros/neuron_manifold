@@ -8,7 +8,7 @@ function cvPCA_eigs_mice_shuffle_redCells(dataroot, matroot,mouse_tag,mouse)
 % load data
 load(fullfile(dataroot,'dbstims.mat'));% stimset !!! check it is in your data folder otherwise download it from figshare 
 K=1;
-load(fullfile(matroot,sprintf('%s_redCells_proc.mat',stimset{K}))); % respAll, ie output of preproccessing step
+load(fullfile(dataroot,sprintf('%s_redCells_proc.mat',stimset{K}))); % respAll, ie output of preproccessing step
 
 A = double(respAll{mouse});
 [m, n] = size(A(:,:,1));
