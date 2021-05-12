@@ -1,7 +1,7 @@
 clear all;
 
 % !!!!!! update mainpath 
-mainpath = '~/Desktop/neuron_manifold';
+mainpath = '~/Desktop/neuron_manifold-main';
 % where data is stored 
 dataroot = sprintf('%s/data', mainpath); 
 % where temporary data is stored 
@@ -21,6 +21,7 @@ addpath(genpath(sprintf('%s/matlab_functions', mainpath)));
 %%%%%%%%%%
 % fig 9b 
 %%%%%%%%%%
+disp('Making fig 9b');
 mouse_tag='M170714_MP032_2017-08-07';
 mouse=4; 
 
@@ -33,6 +34,8 @@ plot_mice_powerlaw_shuffle_fig9b(matroot, myplotroot,mouse_tag);
 %%%%%%%%%%
 % fig S5g 
 %%%%%%%%%%
+disp('Making fig S5g-l');
+
 mouse_tag='M160825_MP027_2016-12-14';
 mouse=1; 
 
@@ -105,6 +108,8 @@ plot_mice_powerlaw_shuffle_figS5l(matroot, myplotroot,mouse_tag);
 %%%%%%%%%%
 % fig S6b
 %%%%%%%%%%
+disp('Making fig S6b');
+
 mouse_tag='M170714_MP032_2017-08-07';
 mouse=4; 
 
