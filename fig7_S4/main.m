@@ -1,15 +1,17 @@
 clear all;
 
 % !!!!!! update mainpath 
-mainpath = '~/Desktop/neuron_manifold';
+mainpath = '~/Desktop/neuron_manifold-main';
 
 % where plots(outputs) are saved
 myplotroot=sprintf('%s/fig7_S4/figs', mainpath);
 mkdir(myplotroot);
 
+% where other functions are saved
+addpath(genpath(sprintf('%s/matlab_functions', mainpath)));
 %% FIGURE 7 and S4
 % author: Kaie Kubjas, Annachiara Korchamros
-
+disp('Running ..');
 %%%%%%%%%%
 % Fig 7a
 %%%%%%%%%%
