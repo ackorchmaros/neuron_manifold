@@ -14,7 +14,7 @@ lPCA=ceil(10/2800*size(specS,1));
 rPCA=floor(500/2800*size(specS,1));
 [p,ypred]=get_powerlaw(specS,lPCA:rPCA);
 plot(ypred,'b');
-text(100, 0.0005, sprintf('\\alpha=%2.2f', p),'fontweight','bold','fontsize',15,...
+text(200, 0.005, sprintf('\\alpha=%2.2f', p),'fontweight','bold','fontsize',15,...
     'fontangle','normal','color','b') % tune the first 2 parameters to add alpha on the plot
 box off;
 set(gca,'FontSize',25)

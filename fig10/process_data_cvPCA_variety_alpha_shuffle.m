@@ -1,7 +1,7 @@
 clear all;
 
 % !!!!!! update mainpath 
-mainpath = '~/Desktop/neuron_manifold';
+mainpath = '~/Desktop/neuron_manifold-main';
 % where data is stored 
 dataroot = sprintf('%s/data', mainpath); 
 % where temporary data is stored 
@@ -15,7 +15,7 @@ addpath(genpath(sprintf('%s/matlab_functions', mainpath)));
 %% FIGURE 10b
 % author: Annachiara Korchamros
 %inputs
-segre_case='10000ambient_3000segre_199segre';
+segre_case='10000ambient_3000sample_199segre';
 
 % compute cvPCA variances 
 compute_cvPCA_eigs_shuffle(dataroot, matroot,segre_case);

@@ -5,9 +5,9 @@
 #(2) get their segre product, ie (x1y1,x1y2,....) 
 #(3) check first coordinate isn't zero (check vectors first coordinate) and resample eventually (optional)
 #(4) pass to nonhomogeous coordinates and check points are projective different and resample eventually (optional)
-#(6) save 3000 sample size
-#(7) subsample 2 repeats of 300 samples each from (6) randomly
-#(8) subsample 2 repeats of 30 samples each from (6) randomly
+#(5) save 3000 sample size
+#(6) subsample 2 repeats of 300 samples each from (6) randomly
+#(7) subsample 2 repeats of 30 samples each from (6) randomly
 ##############
 ## libraries 
 ##############
@@ -68,20 +68,20 @@ f.sample.segre<-paste0(out.dir,"/",ambient.dimension,'ambient_',sample.size,"sam
 writeMat(con=f.sample.segre,x=sample.segre)
 
 #(6) 
-subsample.size<-300
-set.seed(170714) # mouse tag
-index.subsample<-sample.int(sample.size, subsample.size) #integer version of sample function
-subsample.segre<-sample.segre[index.subsample,]
-
-f.subsample.segre<-paste0(out.dir,"/",ambient.dimension,'ambient_',subsample.size,"sample_",segre.dimension,"segre.mat")
-writeMat(con=f.subsample.segre,x=subsample.segre)
+# subsample.size<-300
+# set.seed(170714) # mouse tag
+# index.subsample<-sample.int(sample.size, subsample.size) #integer version of sample function
+# subsample.segre<-sample.segre[index.subsample,]
+# 
+# f.subsample.segre<-paste0(out.dir,"/",ambient.dimension,'ambient_',subsample.size,"sample_",segre.dimension,"segre.mat")
+# writeMat(con=f.subsample.segre,x=subsample.segre)
 
 #(7)
-subsample.size<-30
-set.seed(170715) 
-index.subsample<-sample.int(sample.size, subsample.size)
-subsample.segre<-sample.segre[index.subsample,]
-
-f.subsample.segre<-paste0(out.dir,"/",ambient.dimension,'ambient_',subsample.size,"sample_",segre.dimension,"segre.mat")
-writeMat(con=f.subsample.segre,x=subsample.segre)
+# subsample.size<-30
+# set.seed(170715) 
+# index.subsample<-sample.int(sample.size, subsample.size)
+# subsample.segre<-sample.segre[index.subsample,]
+# 
+# f.subsample.segre<-paste0(out.dir,"/",ambient.dimension,'ambient_',subsample.size,"sample_",segre.dimension,"segre.mat")
+# writeMat(con=f.subsample.segre,x=subsample.segre)
 
