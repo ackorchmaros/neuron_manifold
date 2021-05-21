@@ -1,7 +1,7 @@
 clear all;
 
 % !!!!!! update mainpath 
-mainpath = 'Desktop/neuron_manifold';
+mainpath = '~/Desktop/neuron_manifold-main';
 % where data is stored 
 dataroot = sprintf('%s/data', mainpath); 
 %% LOAD DATA

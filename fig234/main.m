@@ -1,7 +1,7 @@
 clear all;
 
 % !!!!!! update mainpath 
-mainpath = '~/Desktop/neuron_manifold';
+mainpath = '~/Desktop/neuron_manifold-main';
 % where data is stored 
 dataroot = sprintf('%s/data', mainpath); 
 % where plots(outputs) are saved
@@ -86,7 +86,7 @@ estimatedNoise2_ev = sort(estimatedNoise2_ev,'descend');
 estimatedNoise2_ev = estimatedNoise2_ev(1:min(size(X1)));
 
 %% PLOTS
-%figure 2a  
+%figure 3a  
 close;
 edges = linspace(0, 100, 71);
 map = brewermap(9,'Set1');
@@ -108,9 +108,9 @@ ylabel('Variance','fontsize',40);
 legalpha('simulated data','simulated data signal','location','northeast')
 legend boxoff
 axis square;
-%print(fullfile(myplotroot,sprintf('variance_simulatedData_estimatedSignal.pdf')),'-dpdf','-fillpage');
+print(fullfile(myplotroot,sprintf('fig3a.pdf')),'-dpdf','-fillpage');
 
-% figure 2b
+% figure 3b
 close;
 edges = linspace(0, 100, 71);
 map = brewermap(9,'Set1');
@@ -132,9 +132,9 @@ ylabel('Variance','fontsize',40);
 legalpha('original data','orginal data signal','location','northeast')
 legend boxoff
 axis square;
-%print(fullfile(myplotroot,sprintf('variance_miceData_trueSignal.pdf')),'-dpdf','-fillpage');
+print(fullfile(myplotroot,sprintf('fig3b.pdf')),'-dpdf','-fillpage');
 
-%figure 3a
+%figure 2a
 close;
 edges = linspace(0, 100, 71);
 map = brewermap(9,'Set1');
@@ -156,9 +156,9 @@ ylabel('Variance','fontsize',40);
 legalpha('simulated data','simulated data noise','location','northeast');
 legend boxoff;
 axis square;
-%print(fullfile(myplotroot,sprintf('variance_simulatedData_estimatedNoise.pdf')),'-dpdf','-fillpage');
+print(fullfile(myplotroot,sprintf('fig2a.pdf')),'-dpdf','-fillpage');
 
-%figure 3b
+%figure 2b
 close;
 edges = linspace(0, 100, 71);
 map = brewermap(9,'Set1');
@@ -180,7 +180,7 @@ ylabel('Variance','fontsize',40);
 legalpha('original data','orginal data noise','location','northeast')
 legend boxoff;
 axis square;
-%print(fullfile(myplotroot,sprintf('variance_miceData_trueNoise.pdf')),'-dpdf','-fillpage');
+print(fullfile(myplotroot,sprintf('fig2b.pdf')),'-dpdf','-fillpage');
 
 %figure 4a 
 close;
@@ -203,7 +203,7 @@ ylabel('Variance','fontsize',40);
 legalpha('orginal data signal', 'simulated data signal','location','northeast')
 legend boxoff;
 axis square;
-%print(fullfile(myplotroot,sprintf('variance_trueSignal_estimatedSignal.pdf')),'-dpdf','-fillpage');
+print(fullfile(myplotroot,sprintf('fig4a.pdf')),'-dpdf','-fillpage');
 
 %figure4b
 close;
@@ -227,6 +227,6 @@ ylabel('Variance','fontsize',40);
 legalpha('orginal data noise', 'simulated data noise','location','northeast')
 legend boxoff;
 axis square;
-print(fullfile(myplotroot,sprintf('variance_trueNoise_EstimatedNoise_test.pdf')),'-dpdf','-fillpage');
+print(fullfile(myplotroot,sprintf('fig4b.pdf')),'-dpdf','-fillpage');
 
 disp('Done');

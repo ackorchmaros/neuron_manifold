@@ -7,7 +7,7 @@
 
 # Convert to format: 2(numb. stimuli) x numb. neurons
 
-Rscript --vanilla ~/Desktop/neuron_manifold-main/fig234/convert_signal_matlab.R 'M170714_MP032_2017-08-07' '~/Desktop/neuron_manifold/data'
+Rscript --vanilla ~/Desktop/neuron_manifold-main/fig234/convert_signal_matlab.R 'M170714_MP032_2017-08-07' '~/Desktop/neuron_manifold-main/data'
 
 # Make simulated data and plots
 
