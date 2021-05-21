@@ -1,7 +1,7 @@
 clear all;
 
 % !!!!!! update mainpath 
-mainpath = '~/Desktop/neuron_manifold';
+mainpath = '~/Desktop/neuron_manifold-main';
 % where data is stored 
 dataroot = sprintf('%s/data', mainpath); 
 % where temporary data is stored 
@@ -39,7 +39,7 @@ og_case='10000ambient_300sample_4950og';
 compute_cvPCA_eigs(dataroot, matroot,og_case);
 
 % plot
-plot_powerlaw_noAlpha(matroot,myplotroot,og_case);
+plot_powerlaw_noAlpha_og(matroot,myplotroot,og_case);
 close;
 
 %%%%%%%%%
