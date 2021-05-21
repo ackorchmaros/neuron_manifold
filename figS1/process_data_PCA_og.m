@@ -1,7 +1,7 @@
 clear all;
 
 % !!!!!! update mainpath 
-mainpath = '~/Desktop/neuron_manifold';
+mainpath = '~/Desktop/neuron_manifold-main';
 % where data is stored 
 dataroot = sprintf('%s/data', mainpath); 
 % where temporary data is stored 
@@ -10,6 +10,8 @@ mkdir(matroot);
 % where plots are saved
 myplotroot= sprintf('%s/figS1/figs', mainpath); 
 mkdir(myplotroot);
+% where other functions are saved
+addpath(genpath(sprintf('%s/matlab_functions', mainpath)));
 %% FIGURE 5
 % author: Annachiara Korchamros
 
@@ -27,12 +29,12 @@ dimension='190';
 sample_size='300';
 
 % compute PCA for each method 
-compute_eigs_alpha_ak(dataroot, matroot,sample_case,normal);
-compute_eigs_alpha_ak(dataroot, matroot,sample_case,uniform_cluster1);
-compute_eigs_alpha_ak(dataroot, matroot,sample_case,uniform_cluster2);
+compute_PCA_eigs(dataroot, matroot,sample_case,normal);
+compute_PCA_eigs(dataroot, matroot,sample_case,uniform_cluster1);
+compute_PCA_eigs(dataroot, matroot,sample_case,uniform_cluster2);
 
 % plot
-plot_figS1(dataroot,myplotroot,sample_case,normal,uniform_cluster1,uniform_cluster2,dimension,sample_size);
+plot_figS1(matroot,myplotroot,sample_case,normal,uniform_cluster1,uniform_cluster2,dimension,sample_size);
 close;
 
 disp('Done');
