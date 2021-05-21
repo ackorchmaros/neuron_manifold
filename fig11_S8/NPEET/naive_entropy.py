@@ -8,6 +8,7 @@ import numpy as np
 import numpy.random as nr
 import pandas as pd
 import sys,argparse
+import random
 
 
 print("\n\n Computing naive entropy.. \n")
