@@ -1,7 +1,7 @@
 clear all;
 
 % !!!!!! update mainpath 
-mainpath = '~/Desktop/neuron_manifold';
+mainpath = '~/Desktop/neuron_manifold-main';
 % where data is stored 
 dataroot = sprintf('%s/data', mainpath); 
 % where plots(outputs) are saved
@@ -12,7 +12,7 @@ addpath(genpath(sprintf('%s/matlab_functions', mainpath)));
 
 %% FIGURE 8
 % author: Kaie Kubjas, Annachiara Korchamros
-
+disp('Running ..');
 %%%%%%%%%%%%%%
 % load data
 %%%%%%%%%%%%%%
@@ -92,6 +92,7 @@ print(fullfile(myplotroot,sprintf('fig8a.pdf')),'-dpdf','-fillpage');
 %%%%%%%%%%%
 % Fig 8b
 %%%%%%%%%%%
+close;
 
 e1 = eig(cov(R));
 e1 = sort(e1,'descend');
