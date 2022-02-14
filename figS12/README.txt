@@ -17,6 +17,9 @@ Rscript --vanilla ~/Desktop/neuron_manifold-main/figS12/transpose_data.R 'M17071
 julia ~/Desktop/neuron_manifold-main/figS12/MLE.jl "~/Desktop/neuron_manifold-main/figS12/temp/repeat2_clean_signal_M170714_MP032_2017-08-07_t.mat" "~/Desktop/neuron_manifold-main/figS12/figs/repeat2_clean_signal_M170714_MP032_2017-08-07_MLE.pdf"
 
 ##################################################### segre
+# make data
+Rscript --vanilla ~/Desktop/neuron_manifold-main/figS12/sample_segre_10k_normal.R 100 3000 10 1 '~/Desktop/neuron_manifold-main/figS12/temp' 
+
 # transpose data
 Rscript --vanilla ~/Desktop/neuron_manifold-main/figS12/transpose_data.R '10000ambient_3000sample_199segre_normalSample' "NULL" '~/Desktop/neuron_manifold-main/figS12/data' '0' '~/Desktop/neuron_manifold-main/figS12/temp'
 
