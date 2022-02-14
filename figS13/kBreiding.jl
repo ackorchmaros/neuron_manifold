@@ -1,4 +1,4 @@
-############################################################################################################# NPCA with Breiding threshold wrt k ID estimate 
+############################################################################################################# NPCA with Breiding threshold wrt k ID estimate WRAPPER
 # author: annachiara korchmaros
 
 # load packages
