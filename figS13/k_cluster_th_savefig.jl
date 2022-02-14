@@ -1,10 +1,6 @@
-################################################# NPCA with Breiding threshold wrt k ID estimate PLOT
+################################################# NPCA diagram wrt the number of NN and  breiding threshold PLOT
 # author: annachiara korchmaros
-# orginal script: EstimateDimensionMLE from "Learning algebraic varieties from samples"", Breiding et al.
 
-########
-# Main #
-########
 
 """
 Produces NPCA Dimension vs. k Diagram.
@@ -12,7 +8,6 @@ Produces NPCA Dimension vs. k Diagram.
 * ranks is a matrix whose rows are the NNs rank/value.
 There are some optional arguments.
 * k_ticks = k puts into k evenly spaces k on [1,n-1] at which the dimension is computed.
-* fontsize sets the fontsize of the axes.
 * lw sets the linewidth.
 """
 function DimensionDiagramsNPCAnn(
@@ -25,36 +20,37 @@ function DimensionDiagramsNPCAnn(
 
     n = size(data,1)
     m = size(data,2)
-    colors = "darkorange1"
+    colors = "green"
     y_upper = min(n,m)+0.1
-    k = Array{Integer}(range(10, step = ceil((n-10)/k_ticks), stop = n-1+ceil((n-10)/k_ticks)))
-
-    p = Plots.plot()
-    d = EstimateDimensionNPCAthB(data,ranks,k_ticks)
-    Plots.plot!(p, k, d, lw = lw, linecolor = colors)
-
-
-  
-    Plots.plot!(p, ϵ, d, lw = lw, linecolor = colors)    
-    y_upper = min(y_upper, ceil(maximum(d)))
-
-    Plots.plot(p,
-              xlims = [0,1],
-              ylims = [0,y_upper],
-              tickfont = 20,
-              labelfontsize = 30,
-              xlabel = "ϵ",
-              ylabel = "d(ϵ)",
-              xscale = :none,
-              yscale = :none,
-              legend = false,
-              yguidefontrotation=-90,
-              ylim = (0,y_upper),
-              size = (800, 900),
-              dpi = 300
-      )
     
-    savefig(p,fout)
+    k = Array{Integer}(range(10, step = ceil((n-10)/k_ticks), stop = n-1+ceil((n-10)/k_ticks)))
+    d = EstimateDimensionNPCAth(data,ranks,k_ticks)
+
+     p = Plots.plot()
+     Plots.plot!(p, k, d, lw = lw, linecolor = colors)
+
+     y_upper = min(y_upper, ceil(maximum(d)))
+
+     Plots.plot(p,
+               xlims = [0,n],
+               ylims = [0,y_upper],
+               tickfont = 20,
+               labelfontsize = 30,
+               xlabel = "k",
+               ylabel = "d(k)",
+               xscale = :none,
+               yscale = :none,
+               legend = false,
+               yguidefontrotation=-90,
+               ylim = (0,y_upper),
+               size = (800, 900),
+               dpi = 300
+       )
+    
+     savefig(p,fout)
+    
+    
+
 end
 
 #####################################################
@@ -70,25 +66,20 @@ function k_clusters(k::Integer,ranks::Array{T,2},sample_size::Integer)where {T<:
 	end
 	return clusters_list
 end
-#################################
-# PCA with Breiding's threshold #
-#################################
-function EstimateDimensionPCAthB(data::Array{T,2}) where {T <: Number}
+
+######################
+# PCA with threshold #
+######################
+function EstimateDimensionPCAth(data::Array{T,2}) where {T <: Number}
     n = size(data, 1)
     data = data .- Statistics.mean.([data[i,:] for i in 1:n])
     if size(data, 2) > 1
-        L = log10.(LinearAlgebra.svdvals(data))
-        if length(L) == 1
-            if L[1] < 1e-15
-                return 0
-            else
-                return 1
-            end
-        else
-            i = findmin(diff(L))
-            # return rank(data)
-            return i[2]
-        end
+        L = LinearAlgebra.svdvals(data)
+        epsilon=eps()
+        maxSize=max(size(data, 2),size(data, 1))
+    	value=maxSize*epsilon*L[1]
+    	count=length(L[L .> value])
+		return count
     else
         return 0
     end
@@ -97,7 +88,7 @@ end
 #################
 # Nonlinear PCA #
 #################
-function EstimateDimensionNPCAthB_k(data::Array{T,2}, ranks::Array{R,2}, k_array::Array{S,1}) where {S,T,R<:Number} 
+function EstimateDimensionNPCAth_k(data::Array{T,2}, ranks::Array{R,2}, k_array::Array{S,1}) where {S,T,R<:Number} 
     sample_size=size(data,1)
     ambient_dim = size(data,2)
     return map(k_array) do k
@@ -107,20 +98,21 @@ function EstimateDimensionNPCAthB_k(data::Array{T,2}, ranks::Array{R,2}, k_array
         selected_points=sort(sample(1:sample_size,number_points, replace = false))
         clusters=clusters[selected_points]
         r = map(clusters) do cluster
-            return EstimateDimensionPCAthB(data[cluster,:]) 
+            return EstimateDimensionPCAth(data[cluster,:]) 
         end
         out=sum(r)/number_points
         if k<= ambient_dim
-        		println("Working on k=",k)
-        		println("Dimension=",out)
+        		#println("Working on k=",k)
+        		#println("Dimension=",out)
                 println(out)
        	end
         return out
     end
 end
 
-function EstimateDimensionNPCAthB(data::Array{T,2},ranks::Array{R,2},k_ticks) where {T,R<:Number}
+function EstimateDimensionNPCAth(data::Array{T,2},ranks::Array{R,2},k_ticks) where {T,R<:Number}
 	n=size(data,1)
 	k_array = Array{Integer}(range(10, step = ceil((n-10)/k_ticks), stop = n-1+ceil((n-10)/k_ticks)))
-	return EstimateDimensionNPCAthB_k(data, ranks, k_array)
+
+	return EstimateDimensionNPCAth_k(data, ranks, k_array)
 end
