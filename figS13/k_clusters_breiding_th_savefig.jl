@@ -26,7 +26,6 @@ function DimensionDiagramsNPCAnn(
     n = size(data,1)
     m = size(data,2)
     colors = "darkorange1"
-    y_upper = min(n,m)+0.1
 
     k = Array{Integer}(range(10, step = ceil((n-10)/k_ticks), stop = n-1+ceil((n-10)/k_ticks)))
 
@@ -34,6 +33,27 @@ function DimensionDiagramsNPCAnn(
     d = EstimateDimensionNPCAthB(data,ranks,k_ticks)
     Plots.plot!(p, k, d, lw = lw, linecolor = colors)
 
+
+  
+    Plots.plot!(p, ϵ, d, lw = lw, linecolor = colors)    
+    y_upper = min(n + 1 + 0.1, ceil(maximum(d)))
+
+    Plots.plot(p,
+              xlims = [0,1],
+              ylims = [0,y_upper],
+              tickfont = 20,
+              labelfontsize = 30,
+              xlabel = "ϵ",
+              ylabel = "d(ϵ)",
+              xscale = :none,
+              yscale = :none,
+              legend = false,
+              yguidefontrotation=-90,
+              ylim = (0,y_upper),
+              size = (800, 900),
+              dpi = 300
+      )
+    
     savefig(p,fout)
 end
 
