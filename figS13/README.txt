@@ -1,6 +1,8 @@
 ############################################################################################################### NPCA ID estimation ################################
 # author:Annachiara Korchmaros
- 
+
+mkdir ~/Desktop/neuron_manifold-main/figS13/figs
+
 ########################################################################### figure (a)-(c) 
 ################################# MICE dataset repeat 1
 julia  ~/Desktop/neuron_manifold-main/figS13/kBreiding.jl "~/Desktop/neuron_manifold-main/data/repeat1_clean_signal_M170714_MP032_2017-08-07.mat" "~/Desktop/neuron_manifold-main/figS13/figs/repeat1_clean_signal_M170714_MP032_2017-08-07_NPCA_Bk.pdf" "~/Desktop/neuron_manifold-main/figS13/figs/repeat1_clean_signal_M170714_MP032_2017-08-07_NPCA_Bk_d.txt" "~/Desktop/neuron_manifold-main/figS13/temp/repeat1_clean_signal_M170714_MP032_2017-08-07_euclidean_NN_matrix.mat" > ~/Desktop/neuron_manifold-main/figS13/dimensions/kBreiding_repeat1_d.txt
