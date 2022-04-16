@@ -49,9 +49,6 @@ python3 HDBSCAN.py -i ~/Desktop/neuron_manifold-main/data/10000ambient_3000sampl
 # Embed data
 Rscript --vanilla ~/Desktop/neuron_manifold-main/table1/embedding_constant.R 4 0 '~/Desktop/neuron_manifold-main/table1/data' '2ambient_3000sample_unimodal'
 
-
-#Rscript --vanilla ~/Desktop/neuron_manifold-main/table1/embedding_constant.R '2ambient_3000sample_unimodal_embedded_const' 'NULL' '~/Desktop/neuron_manifold-main/table1/data' 0
-
 # Dip-test linear and Montecarlo
 Rscript --vanilla ~/Desktop/neuron_manifold-main/table1/dip_test.R '2ambient_3000sample_unimodal_embedded_const' 'NULL' '~/Desktop/neuron_manifold-main/table1/data' 0
 
